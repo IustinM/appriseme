@@ -9,8 +9,22 @@ module.exports = {
         'black':'#000000',
         'white':'#ffffff',
         'buttonBlue': '#2382D9',
+        'blackText':'#232323',
+        'blueText':'#1248B1',
+        'pinkText':'#B1128E'
+
       },
     },
   },
+  screens: {
+    "2xl": {'max': '1535px'},
+    // -› @media (max-width: 1535px) { ... }
+    'minxl': {'max': '1000px'},
+    'xl': {'max': '1396.5px'},
+    'lg': {'max': '1023px'},
+    'md': {'max': '767px'},
+    'sm': {'max': '539px'},
+    'tall': { 'raw': '(max-height: 900px)' },
+    },
   plugins: [],
 }
