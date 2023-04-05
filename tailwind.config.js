@@ -4,18 +4,23 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'poppins':['Poppins','sans-serif']
+    },
     extend: {
       colors: {
         'black':'#000000',
         'white':'#ffffff',
         'buttonBlue': '#2382D9',
+        'buttonPink': '#B1128E',
         'blackText':'#232323',
         'blueText':'#1248B1',
-        'pinkText':'#B1128E'
+        'pinkText':'#B1128E',
+        'textInputGrey':'#00000078'
 
       },
     },
-  },
+  
   screens: {
     "2xl": {'max': '1535px'},
     // -› @media (max-width: 1535px) { ... }
@@ -27,4 +32,5 @@ module.exports = {
     'tall': { 'raw': '(max-height: 900px)' },
     },
   plugins: [],
+}
 }

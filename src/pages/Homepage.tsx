@@ -6,21 +6,14 @@ import SpecialBubble from '../components/utils/SpecialBubble'
 
 const Homepage = () => {
   return (
-    <div className='min-h-[100vh] relative overflow-hidden'>
+    <div className='min-h-[100vh]  relative overflow-hidden'>
         <Navigation/>
         <HeaderText/>
         <div className="tall:block hidden">
-
-        <Bubble width='250' height='250' color='pink' top={-80} right={-70}/>
-        <Bubble width='300' height='300' color='pink' top={-80} right={530}/>
-        <Bubble width='350' height='350' color='pink' top={100} right={170}/>
-        {/* <div className="minxl:hidden block">
-          <SpecialBubble width='350' height='350' color='pink' top={100} right={170}/>
-        </div> */}
-        <Bubble width='300' height='300' color='blue' bottom={-80} left={-20}/>
-        <Bubble width='370' height='370' color='blue' bottom={2} left={500}/>
-        <Bubble width='350' height='350' color='blue' bottom={-150} right={100}/>
+          <Bubble width='600' height='600' color='pink' top={50} right={-250}/>
+          <Bubble width='600' height='600' color='blue' bottom={-350} left={12}/>
         </div>
+      <div className="absolute right-[20%] bottom-0 ">© Powered by Iustin Morosanu</div>
     </div>
   )
 }
