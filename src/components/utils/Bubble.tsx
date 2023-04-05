@@ -33,11 +33,11 @@ const Bubble:React.FC<Props> = ({top,right,bottom,left,color,width,height}) => {
     const backgroundColorHandler = ():string=>{
         switch(color){
             case 'blue':
-                return 'radial-gradient( #2691F4,#1248B1 )'
+                return 'linear-gradient( #2691F4,#1248B1 )'
             case 'pink':
-                return 'radial-gradient( #F426BA,#B1128E )'
+                return 'linear-gradient( #F426BA,#B1128E )'
             default:
-                return 'radial-gradient( #2691F4,#1248B1 )'
+                return 'linear-gradient( #2691F4,#1248B1 )'
         }
     }
 
@@ -105,7 +105,7 @@ const Bubble:React.FC<Props> = ({top,right,bottom,left,color,width,height}) => {
         className='rounded-full absolute s z-[-1]'
         >
         </div>
-        
+
         :
         left &&
         <div style={{

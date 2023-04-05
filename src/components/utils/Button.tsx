@@ -7,15 +7,20 @@ interface Props{
 
 const Button:React.FC<Props> = ({text,backgroundColor}) => {
 
-    // const setBackgroundHandler = () =>{
-    //     switch(backgroundColor){
-    //         case 'blue':
-    //             return ''
-    //     }
-    // }
+    const setBackgroundHandler = () =>{
+        switch(backgroundColor){
+            case 'blue':
+                return 'bg-buttonBlue';
+            case 'pink' :
+              return 'bg-buttonPink';
+            default:
+              return 'bg-buttonBlue';
+
+        }
+    }
 
   return (
-    <button className='bg-buttonBlue py-2 px-4 text-white rounded-[0.3rem]'>{text}</button>
+    <button className={`${setBackgroundHandler()} py-3 px-2 w-[120px] text-white rounded-[0.6rem]`}>{text}</button>
   )
 }
 

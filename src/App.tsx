@@ -5,12 +5,14 @@ import Login from './pages/Login';
 
 function App() {
   return (
+    <div className="font-poppins">
     <Routes>
       <Route path='/' element={
         <Homepage/>
       }/>
       <Route path='/login' element={<Login/>}/>
     </Routes>
+    </div>
   );
 }
 
