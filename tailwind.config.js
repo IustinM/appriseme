@@ -8,6 +8,16 @@ module.exports = {
       'poppins':['Poppins','sans-serif']
     },
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        'columns3': 'repeat(7, minmax(0, 1fr))',
+
+      },
+      gridTemplateRows: {
+        // Simple 16 column grid
+        'rows3': 'repeat(7, minmax(0, 100px))',
+
+      },
       colors: {
         'black':'#000000',
         'white':'#ffffff',

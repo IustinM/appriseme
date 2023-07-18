@@ -1,26 +1,34 @@
+import {  IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 
 interface Props{
     text:string,
-    backgroundColor:string
+    backgroundColor:string,
+    event:()=>void,
+    disable?:boolean
+    icon?:boolean,
+    faIcon?:IconProp,
 }
 
-const Button:React.FC<Props> = ({text,backgroundColor}) => {
+const Button:React.FC<Props> = ({text,backgroundColor,event,disable,icon,faIcon}) => {
 
-    const setBackgroundHandler = () =>{
+  const setBackgroundHandler = () =>{
         switch(backgroundColor){
             case 'blue':
-                return 'bg-buttonBlue';
+              return 'bg-buttonBlue hover:bg-blueText';
             case 'pink' :
-              return 'bg-buttonPink';
+              return 'bg-buttonPink hover:bg-pinkText';
             default:
-              return 'bg-buttonBlue';
-
+              return 'bg-buttonBlue hover:bg-blueText';
         }
     }
 
   return (
-    <button className={`${setBackgroundHandler()} py-3 px-2 w-[120px] text-white rounded-[0.6rem]`}>{text}</button>
+    <button onClick={event} disabled={disable} className={`${setBackgroundHandler()} py-3 px-2 ${icon ? 'w-[150px]' : 'w-[120px]'} justify-center transition-all text-white  ${disable ? '' : 'cursor-pointers'} flex  rounded-[0.6rem]`}>
+      {text}
+      {icon && faIcon && <FontAwesomeIcon className='mx-2' icon={faIcon}/>}
+    </button>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Navigation from '../components/Homepage/Navigation'
 import LoginBody from '../components/Login/LoginBody'
 
-const Login = () => {
+const Login:React.FC = () => {
   return (
     <div className=' min-h-[100vh] flex  '>
       <div style={{backgroundImage:'linear-gradient(to right, #2691F4,#0028B7 )'}} className="w-[40%] text-white flex flex-col justify-between ">
