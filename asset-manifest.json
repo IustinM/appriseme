@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/appriseme/static/css/main.25c985d2.css",
+    "main.js": "/appriseme/static/js/main.a7065bbb.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/appriseme/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/appriseme/index.html",
+    "main.25c985d2.css.map": "/appriseme/static/css/main.25c985d2.css.map",
+    "main.a7065bbb.js.map": "/appriseme/static/js/main.a7065bbb.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/appriseme/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25c985d2.css",
+    "static/js/main.a7065bbb.js"
+  ]
+}
