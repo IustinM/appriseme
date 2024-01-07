@@ -8,6 +8,7 @@ import Button from '../utils/Button';
 import { intervals, typesOfHabits } from './data';
 import { HabbitContext, habitData } from '../../Context/HabbitContext';
 import CalendarPick from '../Calendar/CalendarPick';
+import Calendar from '../Calendar/Calendar';
 
 interface dates{
     startDay:string,
@@ -22,6 +23,9 @@ const AddHabbit = () => {
     const [name,setName] = useState<string>('');
     const [interval,setInterval] = useState<string>('');
     const [habitType,setHabitType] = useState<string>('');
+    const [startDay,setStartDay] = useState<number>(0);
+    const [endDay,setEndDay] = useState<number>(0);
+
     const [dates,setDates] = useState<dates>({
         startDay:'',
         endDay:'',
@@ -85,49 +89,37 @@ const AddHabbit = () => {
     }
 
     return (
-    <div className='fixed backdrop-blur-sm z-[51] bg-[#00000054] flex items-center justify-center min-h-[100vh] w-full'>
-        <CalendarPick/>
-        <div className="bg-white w-[400px] h-[570px]  rounded-[0.6rem]">
-            <div onClick={() => setHideAddHabbit(false)} className="full flex justify-end w-[98%]">
+    <div className='fixed backdrop-blur-sm z-[51]  bg-[#00000054] flex items-center justify-center min-h-[100vh] w-full'>
+        <div className=" relative rounded-[0.5rem] shadow-lg p-[2rem] bg-white">
+            <div onClick={() => setHideAddHabbit(false)} className="absolute top-[1rem] right-[2rem] ">
                 <FontAwesomeIcon className='w-[25px] h-[25px] my-1 cursor-pointer' icon={faXmark} />
             </div>
-            <h2 className="w-[80%] mx-auto text-[1.5rem] py-3 my-2">Add habit</h2>
-            <div className="w-[80%] mx-auto">
-                <Input labelText={'Habbit name'} inputId={'habbit_name'} event={(value:string) => setName(value)}/>
-                <div className="my-4"></div>
-                <Select options={intervals} labelText={'Select interval'} selectId={''} event={(value:string) => setInterval(value)}/>
-                <div className="my-4"></div>
-                <Select options={typesOfHabits} labelText={'Select habit type'} selectId={''} event={(value:string) => setHabitType(value)}/>
-                <div className="flex justify-between mt-5 ">
+            <h2 className=" text-[1.5rem] py-3 my-2">Add habit</h2>
+            <div className="flex ">
+                <Calendar/>
+                <div className="border-r-[1px] shadow-md mx-3"></div>
+                <div className="bg-white ml-[1rem]  w-[300px]">
                     <div className="">
-                        <div className="flex items-center mb-2">                        
-                            <FontAwesomeIcon className='w-[20px] mr-1 cursor-pointer h-[20px]' icon={faCircleInfo}/>
-                            Start day:
+                        <Input labelText={'Habbit name'} inputId={'habbit_name'} event={(value:string) => setName(value)}/>
+                        <div className="my-4"></div>
+                        <Select options={intervals} labelText={'Select interval'} selectId={''} event={(value:string) => setInterval(value)}/>
+                        <div className="my-4"></div>
+                        <Select options={typesOfHabits} labelText={'Select habit type'} selectId={''} event={(value:string) => setHabitType(value)}/>
+                    
+                        <div className="">
+                            <p className='my-2'>Intensity level</p>
+                            <Range color='normal' event={(value: number) =>{setIntensity(value)}}/>
                         </div>
-                        <div className="border-[1px] text-[0.9rem] cursor-pointer flex  items-center justify-center w-[110px] h-[35px] text-textInputGrey rounded-[0.3rem] border-black">
-                            dd/mm/yyyy
-                        </div>
-                    </div>
-                    <div className="">
-                        <div className="flex items-center mb-2 ">                        
-                            <FontAwesomeIcon className='w-[20px] mr-1 cursor-pointer h-[20px]' icon={faCircleInfo}/>
-                            End day:
-                        </div>
-                        <div className="border-[1px] text-[0.9rem] text-textInputGrey  cursor-pointer flex  items-center justify-center w-[110px] h-[35px] rounded-[0.3rem] border-black">
-                            dd/mm/yyyy
+                        <div className="">
+                            <p className='my-2'>Pleasure level</p>
+                            <Range color='blue' event={(value:number) =>{setPleasure(value)}}/>
                         </div>
                     </div>
                 </div>
-                <div className="">
-                    <p className='my-2'>Intensity level</p>
-                    <Range color='normal' event={(value: number) =>{setIntensity(value)}}/>
-                </div>
-                <div className="">
-                    <p className='my-2'>Pleasure level</p>
-                    <Range color='blue' event={(value:number) =>{setPleasure(value)}}/>
-                </div>
-                <div className="flex justify-center mt-3">
-                    <Button event={submitHabitHandler} text={'Add habit'} disable={disableButtonHandler()} backgroundColor={'pink'}/>
+            </div>
+            <div className="flex justify-center  mt-5">
+                <div className="w-[150px]">
+                     <Button event={submitHabitHandler} text={'Add habit'} disable={disableButtonHandler()} backgroundColor={'pink'}/>
                 </div>
             </div>
         </div>

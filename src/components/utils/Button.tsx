@@ -25,7 +25,7 @@ const Button:React.FC<Props> = ({text,backgroundColor,event,disable,icon,faIcon}
     }
 
   return (
-    <button onClick={event} disabled={disable} className={`${setBackgroundHandler()} py-3 px-2 ${icon ? 'w-[150px]' : 'w-[120px]'} justify-center transition-all text-white  ${disable ? '' : 'cursor-pointers'} flex  rounded-[0.6rem]`}>
+    <button onClick={event} disabled={disable} className={`${setBackgroundHandler()} w-full py-3 px-2 justify-center transition-all text-white  ${disable ? '' : 'cursor-pointers'} flex  rounded-[0.6rem]`}>
       {text}
       {icon && faIcon && <FontAwesomeIcon className='mx-2' icon={faIcon}/>}
     </button>

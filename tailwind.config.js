@@ -23,6 +23,7 @@ module.exports = {
         'white':'#ffffff',
         'buttonBlue': '#2382D9',
         'buttonPink': '#B1128E',
+        'activeBlue': '#17629c',
         'blackText':'#232323',
         'blueText':'#1248B1',
         'pinkText':'#B1128E',

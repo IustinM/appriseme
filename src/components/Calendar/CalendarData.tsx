@@ -3,10 +3,15 @@ import { getDaysInMonth,getDay, lastDayOfMonth, getDate, getMonth, getYear } fro
 export const monthsDays = (currentDate:Date) => getDaysInMonth(currentDate);
 
 export const daysLetters = ['Mon','Tue','Wen','Thu','Fri','Sat','Sun'];
+export const monthsAbbreviated = ['Jan ', 'Feb ', 'Mar ', 'Apr ', 'May ', 'Jun ', 'Jul ', 'Aug ', 'Sep ', 'Oct ', 'Nov ', 'Dec '];
 
-export const daysOfCurrentMonth = (currentDate:Date) => {
+
+
+
+export const daysOfCurrentMonth = (currentMonth:number,currentYear:number) => {
+    const getDaysMonth  = getDaysInMonth(new Date(currentYear,currentMonth,1,59,59,59))
     const dateArray = [];
-    for(let i = 1;i<=monthsDays(currentDate);i++){
+    for(let i = 1;i<=getDaysMonth;i++){
         dateArray.push(i);
     }
     return dateArray;
@@ -15,34 +20,32 @@ export const daysOfCurrentMonth = (currentDate:Date) => {
 export const getDayDate = (year:number,month:number,day:number) => new Date(year,month,day);
 
 export const getDayOfWeek = (currentYear:number,currentMonth:number,currentDay:number) => {
-
-  console.log(new Date(2023,3,1));
-  const dayLetter = getDay(getDayDate(currentYear,currentMonth,currentDay));
-  return dayLetter;  
+  const weekDay = getDay(getDayDate(currentYear,currentMonth,currentDay));
+  console.log(weekDay)
+  return weekDay;  
 }
 
-export const previousMonthDays = (currentDate:Date) =>{
-    const datesData ={day:getDate(currentDate),month:getMonth(currentDate),year:getYear(currentDate)};
-    console.log(datesData)
+export const previousMonthDays = (currentDate:Date,currentMonth:number,currentYear:number) =>{
+    const datesData ={day:getDate(currentDate),month:currentMonth,year:currentYear};
+    const firstDay = getDay(getDayDate(datesData.year,datesData.month,1)) -1;
     const lastDay = getDate(lastDayOfMonth(getDayDate(datesData.year,datesData.month-1,1)));
-    const firstDay = getDayOfWeek(datesData.year,datesData.month,1) -1;
     const previousMonthArray = [];
-    for(let i = 0 ;i<= firstDay;i++){
+    for(let i = 0 ;i< firstDay;i++){
         const dayDifference = lastDay - i;
         previousMonthArray.push(dayDifference);
     } 
     return previousMonthArray;
 }
 
-export const nextMonthDays = (currentDate:Date) =>{
-    const datesData ={day:getDate(currentDate),month:getMonth(currentDate),year:getYear(currentDate)};
-    const firstDay = getDate(lastDayOfMonth(getDayDate(datesData.year,datesData.month+1,1)));
-    const lastDay = getDayOfWeek(datesData.year,datesData.month,datesData.day) -1;
+export const nextMonthDays = (currentDate:Date,currentMonth:number,currentYear:number) =>{
+    const datesData ={day:getDate(currentDate),month:currentMonth,year:currentYear};
+    const lastDay = getDay(lastDayOfMonth(getDayDate(datesData.year,datesData.month,1)));
+    const firstDay = getDay((getDayDate(datesData.year,datesData.month,1)));
+    const dayDifference = firstDay === 0 ?6 - lastDay : 7 - lastDay;
     const nextMonthArray = [];
-    for(let i = 0 ;i<= lastDay;i++){
-        const dayDifference = firstDay+ i;
+    for(let i = 0 ;i<dayDifference;i++){
+        const dayDifference = 1+ i;
         nextMonthArray.push(dayDifference);
     } 
-    console.log(nextMonthArray)
     return nextMonthArray;
 }
