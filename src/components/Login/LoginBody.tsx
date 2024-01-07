@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from '../utils/Button'
 import Input from '../utils/Input'
 
@@ -16,10 +17,12 @@ const LoginBody = () => {
         </div>
         <div className="flex flex-col items-end text-right w-[80%] mx-auto text-[0.9rem]">
             <p className="">If you don’t have an account </p>
-            <p className="text-blueText underline">sign here.</p>
+            <Link to='/register' className="text-blueText underline">sign here.</Link>
         </div>
-        <div className="flex justify-center mt-[2rem]">
-            <Button text={'Sign in'} event={()=>{}} backgroundColor={'blue'} />
+        <div className="flex w-full justify-center mt-[2rem]">
+            <div className="w-[120px]">
+                <Button text={'Sign in'} event={()=>{}} backgroundColor={'blue'} />
+            </div>
         </div>
     </div>
   )

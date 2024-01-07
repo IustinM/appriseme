@@ -13,7 +13,9 @@ const HeaderText:React.FC = () => {
             <input className='border-[1px] outline-none border-textInputGrey rounded-l-[0.6rem] text-[0.9rem] text-textInputGrey placeholder:text-textInputGrey px-2' placeholder='Type your email here'/>
             <button className='bg-buttonBlue text-white w-[120px] text-[0.9rem] rounded-r-[0.6rem]'>Sign up</button>
         </div>
-        <Button text='View demo' event={() =>{}} backgroundColor='pink'/>
+        <div className="w-[120px]">
+          <Button text='View demo' event={() =>{}} backgroundColor='pink'/>
+        </div>
     </div>
   )
 }

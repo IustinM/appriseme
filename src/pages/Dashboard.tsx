@@ -13,11 +13,11 @@ const Dashboard = () => {
   return (
     <div className=' min-h-[100vh]'>
         {hideAddHabbit && <AddHabbit/>}
-        <div className=" flex  h-[12vh] justify-between border-b-[1px] items-center">
-            <div className="w-[90%] mx-auto flex justify-between items-center">
-                <IconNavigation/>
+        <div className=" flex  h-[12vh] justify-between items-center">
+            <div className="w-[90%] mx-auto flex justify-end items-center">
+                {/* <IconNavigation/> */}
                 <div className="flex items-center ">
-                    <p className="mx-3">Zziustin145</p>
+                    <p className="mx-3">Username</p>
                     <div className="w-[60px] h-[60px] bg-slate-400 rounded-full">
 
                     </div>
@@ -29,7 +29,9 @@ const Dashboard = () => {
                 <FontAwesomeIcon className='w-[50px] text-buttonBlue h-[50px]' icon={faChartPie}/>
                 <h3 className='mx-5  text-[2rem]'>Habbits</h3>
             </div>
-            <Button text={'Add habbit'} event={() => setHideAddHabbit(true)} backgroundColor={'blue'} icon faIcon={faMugHot}/>
+            <div className="w-[150px]">
+                <Button text={'Add habbit'} event={() => setHideAddHabbit(true)} backgroundColor={'blue'} icon faIcon={faMugHot}/>
+            </div>
         </div>
         <div className=" flex  mx-5 min-h-[70vh] items-center">
             <PieContainer interval='Daily'/>

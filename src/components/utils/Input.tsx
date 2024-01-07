@@ -27,7 +27,7 @@ const Input:React.FC<Props> = ({labelText,inputId,event:changeHabitValue}) => {
     
     return (
         <div className="border-[1px]  relative rounded-[0.3rem] p-1  border-black">
-            <label htmlFor={inputId} className={`absolute bg-white px-[0.1rem] mx-1 text-[0.9rem] transition-all ${activeInput ? 'top-[-10px] text-[0.75rem] ' : 'top-[50%] translate-y-[-50%]'} text-textInputGrey`}>{labelText}</label>
+            <label htmlFor={inputId} className={`absolute bg-white px-[0.1rem] mx-1 text-[0.9rem] transition-all ${activeInput ? 'top-[-10px] text-[0.75rem] text-blue-600 ' : 'top-[50%] translate-y-[-50%]'} text-textInputGrey`}>{labelText}</label>
             <input onChange={changeInputHandler} id={inputId} name={inputId} className='w-full outline-none min-h-[30px]' />
         </div>
     )
