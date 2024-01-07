@@ -4,7 +4,7 @@ import Navigation from '../components/Homepage/Navigation'
 import Bubble from '../components/utils/Bubble'
 import SpecialBubble from '../components/utils/SpecialBubble'
 
-const Homepage = () => {
+const Homepage:React.FC = () => {
   return (
     <div className='min-h-[100vh]  relative overflow-hidden'>
         <Navigation/>

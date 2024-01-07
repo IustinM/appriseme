@@ -8,11 +8,22 @@ module.exports = {
       'poppins':['Poppins','sans-serif']
     },
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        'columns3': 'repeat(7, minmax(0, 1fr))',
+
+      },
+      gridTemplateRows: {
+        // Simple 16 column grid
+        'rows3': 'repeat(7, minmax(0, 100px))',
+
+      },
       colors: {
         'black':'#000000',
         'white':'#ffffff',
         'buttonBlue': '#2382D9',
         'buttonPink': '#B1128E',
+        'activeBlue': '#17629c',
         'blackText':'#232323',
         'blueText':'#1248B1',
         'pinkText':'#B1128E',

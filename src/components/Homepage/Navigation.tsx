@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Icon from '../../assets/Icon.png';
 import Button from '../utils/Button';
+import IconNavigation from '../utils/IconNavigation';
 
 interface Props{
   hideLogin?:boolean,
@@ -12,10 +13,7 @@ const Navigation:React.FC<Props> = ({hideLogin,hideSignup}) => {
   return (
     <div className='flex justify-between  text-blackText'>
         <div className="w-[80%] mx-auto flex">
-          <div className='flex items-center w-[80%]  min-h-[10vh] '>
-            <div className="w-[55px] h-[55px] rounded-[0.6rem] bg-blue-600"></div>
-            <p className='text-[1.3rem] mx-2'>AppriseMe</p>
-          </div>
+          <IconNavigation/>
           <div className=" mr-[10rem] flex flex-grow items-center  ">
             {
               !hideLogin &&
@@ -26,7 +24,7 @@ const Navigation:React.FC<Props> = ({hideLogin,hideSignup}) => {
             {
               !hideSignup &&
               <Link to={'/register'} className='text-[1.1rem] w-[100px]'>
-                <Button text='Sign up' backgroundColor=''/>
+                <Button text='Sign up' event={()=>{}} backgroundColor=''/>
               </Link>
             }
           </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import HabbitProvider from './Context/HabbitContext';
+import Dashboard from './pages/Dashboard';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -11,6 +14,8 @@ function App() {
         <Homepage/>
       }/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/dashboard' element={<HabbitProvider><Dashboard/></HabbitProvider>}/>
+      <Route path='/register' element={<Register/>}/>
     </Routes>
     </div>
   );
